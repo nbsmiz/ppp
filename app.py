@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, session
+from flask_googlemaps import GoogleMaps
 
 app = Flask(__name__)
 
