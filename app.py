@@ -8,6 +8,8 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+API_KEY = "AIzaSyDH1FdEzMrPOj3V1bxIwA5hdQmhP4brCaU"
+
 @app.route('/map')
 def map():
     pass
