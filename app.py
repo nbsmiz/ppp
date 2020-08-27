@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
 import folium
+import geocoder as geo
 
 app = Flask(__name__)
 
@@ -11,7 +12,9 @@ def index():
 
 @app.route('/map', methods=['POST'])
 def map():
-    start_coords = (46.9540700, 142.7360300)
+    g = geo.osm('45239')
+    start_coords = g.latlng
+    # start_coords = (46.9540700, -142.7360300)
     folium_map = folium.Map(location=start_coords, zoom_start=14)
     return folium_map._repr_html_()
 
