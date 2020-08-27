@@ -21,5 +21,10 @@ def map():
     folium_map.location = start_coords  # change map view location to user input
     return folium_map._repr_html_()
 
+
+@app.route('/map2')
+def map2():
+    return render_template('map-var.html')
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
