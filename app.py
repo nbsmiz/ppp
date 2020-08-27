@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, redirect, session
+from flask_bootstrap import Bootstrap
 import folium
 import geocoder as geo
 
 app = Flask(__name__)
+Bootstrap(app)
 
 
 @app.route('/', methods=['GET'])
@@ -12,10 +14,11 @@ def index():
 
 @app.route('/map', methods=['POST'])
 def map():
-    g = geo.osm('45239')
+    g = geo.osm('45039 USA')
     start_coords = g.latlng
-    # start_coords = (46.9540700, -142.7360300)
-    folium_map = folium.Map(location=start_coords, zoom_start=14)
+    # folium_map = folium.Map(location= start_coords, zoom_start=12)
+    folium_map = folium.Map(location = [0,0], zoom_start=12)  # location required in order to modify with user input
+    folium_map.location = start_coords  # change map view location to user input
     return folium_map._repr_html_()
 
 if __name__ == '__main__':
