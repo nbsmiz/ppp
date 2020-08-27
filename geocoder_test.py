@@ -7,5 +7,5 @@ import geocoder
 
 # g = geocoder.google('1600 Amphitheatre Parkway, Mountain View, CA')
 # g = geocoder.google('Mountain View, CA')
-g = geocoder.google("453 Booth Street, Ottawa ON")
+g = geocoder.osm("45039")
 print(g.latlng)
