@@ -1,7 +1,7 @@
 venv
 *swp
 api_key.txt
-*.ipynb
+*.ipynb*
 data
 static
 .vscode
