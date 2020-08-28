@@ -1,8 +1,7 @@
 venv
 *swp
-data/All Data by State.zip
-data/PPP Data 150k plus.csv
 api_key.txt
-data/ppp_150.csv
 *.ipynb
-data/ppp_loan_strip.json
+data
+static
+.vscode
