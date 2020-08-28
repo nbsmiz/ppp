@@ -3,5 +3,4 @@ venv
 api_key.txt
 *.ipynb*
 data
-static
 .vscode
