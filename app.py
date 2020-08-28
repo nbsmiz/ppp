@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, session
 from flask_bootstrap import Bootstrap
 import folium as f
 import geocoder as geo
+from lib.map import add_loans_to_map
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -22,6 +23,7 @@ def map():
     start_coords = g.latlng  # set view map center to latitude and longitude 
     m = f.Map(location = [0,0], zoom_start=12)  # location required in order to modify with user input
     m.location = start_coords  # change map view location to user input
+    add_loans_to_map(m)
     return m._repr_html_()
 
 
