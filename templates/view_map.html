@@ -1,1 +1,29 @@
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src="http://cdn-geoweb.s3.amazonaws.com/esri-leaflet/1.0.0-rc.2/esri-leaflet.js"></script>
+
+<!--Load Esri for search bar-->
+<script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js"></script>
+
+<script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.css">
+
 {% extends "map2.html" %}
+
+<script>
+    L.control.scale().addTo(map_b51d637f09864f6fa187986969c231a4);
+
+    var searchControl = new L.esri.Controls.Geosearch().addTo(map_b51d637f09864f6fa187986969c231a4);
+
+    var results = new L.LayerGroup().addTo(map_b51d637f09864f6fa187986969c231a4);
+
+    searchControl.on('results', function(data){
+        results.clearLayers();
+        for (var i = data.results.length - 1; i >= 0; i--) {
+            results.addLayer(L.marker(data.results[i].latlng));
+        }
+    });
+
+    setTimeout(function(){$('.pointer').fadeOut('slow');},3400);
+</script>

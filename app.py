@@ -27,13 +27,15 @@ def map():
     return m._repr_html_()
 
 
-@app.route('/map2', methods=['POST', 'GET'])
+@app.route('/view_map', methods=['POST', 'GET'])
 def map2():
-    if (request.method == 'POST') and request.form.get('zipCode') != '':
-        zipCode = request.form.get('zipCode')
-        return render_template('view_map.html', zipCode=zipCode)
-    else:
-        return render_template('view_map.html', zipCode='06071')
+    # if (request.method == 'POST') and request.form.get('zipCode') != '':
+    #     zipCode = request.form.get('zipCode')
+    #     return render_template('view_map.html', zipCode=zipCode)
+    # else:
+    #     return render_template('view_map.html', zipCode='06071')
+    return render_template('view_map.html')
+
 
 @app.route('/about')
 def about():
@@ -43,6 +45,11 @@ def about():
 @app.route('/choro')
 def choro():
     return render_template('map_choro_test.html')
+
+
+@app.route('/map_search')
+def search():
+    return render_template('map_search.html')
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
