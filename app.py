@@ -35,5 +35,14 @@ def map2():
     else:
         return render_template('view_map.html', zipCode='06071')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/choro')
+def choro():
+    return render_template('map_choro_test.html')
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
