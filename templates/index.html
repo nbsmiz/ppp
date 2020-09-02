@@ -1,32 +1,20 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Skeleton application demoing Heroku and Flask integration.">
-    <meta name="author" content="@gotoariel">
-    <!-- <link rel="icon" href="favicon.ico"> -->
-    <title>COVID to PPP Correspondency</title>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  </head>
-  <body>
-    <div class="Container">
-      <div class="row">
-        <div class="col-lg-12 text-left">
-          <form style="text-align: center;" id="input" action="map" method="post">
-            <label>Zip Code</label><br>
-	            <input type="text" name="zipCode">
-              <input type="submit" value="Submit">
-          </form>
-        </div>
-      </div>
-    </div>
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </body>
-</html>
+{% extends "base.html" %}
 
+{% block page_content %}
+    <h1>Paycheck Protection Program Loan Distribution</h1>
+    <form action="/map2" method="POST">
+        <label>Zip Code 2</label><br>
+        <input type="text" name="zipCode">
+        <input type="submit" value="Submit">
+    </form>
+    <form action="/map" method="POST">
+        <label>Zip Code 1</label><br>
+        <input type="text" name="zipCode">
+        <input type="submit" value="Submit">
+    </form>
+
+    <div class="text-center">
+        <a href="/sum_by_state"><img src="static/loan_sum_by_state.png" alt="Total Value of Disbursed Loans by State"></a>
+    </div>
+
+{% endblock %}

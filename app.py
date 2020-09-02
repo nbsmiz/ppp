@@ -10,7 +10,7 @@ Bootstrap(app)
 
 @app.route('/', methods=['GET'])
 def index():
-    return render_template('index2.html')
+    return render_template('index.html')
 
 
 @app.route('/map', methods=['POST', 'GET'])
@@ -29,11 +29,6 @@ def map():
 
 @app.route('/view_map', methods=['POST', 'GET'])
 def map2():
-    # if (request.method == 'POST') and request.form.get('zipCode') != '':
-    #     zipCode = request.form.get('zipCode')
-    #     return render_template('view_map.html', zipCode=zipCode)
-    # else:
-    #     return render_template('view_map.html', zipCode='06071')
     return render_template('view_map.html')
 
 
@@ -47,9 +42,10 @@ def choro():
     return render_template('map_choro_test.html')
 
 
-@app.route('/map_search')
-def search():
-    return render_template('map_search.html')
+@app.route('/sum_by_state')
+def sum_by_state():
+    return render_template('loan_sum_by_state.html')
+
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
