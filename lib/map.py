@@ -18,7 +18,7 @@ def add_aClass_loans(latlng, m):
 
 
 def add_loans_to_map(m):
-    a_latlng = pickle.load(open('static/a_latlng.pkd', 'rb'))
+    a_latlng = pickle.load(open('data/a_latlng.pkd', 'rb'))
     for i in a_latlng.itertuples():
         if i.latlng != None:
             add_aClass_loans(i.latlng, m)
