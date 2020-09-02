@@ -2,7 +2,7 @@ venv
 *swp
 api_key.txt
 .vscode
-.ipynb_*
+*checkpoint*
 data/ppp_150.csv
 data/ppp_loan_strip.json
-.ipynb_checkpoints/data_explore-checkpoint.ipynb
+
