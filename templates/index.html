@@ -1,20 +1,47 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-    <h1>Paycheck Protection Program Loan Distribution</h1>
-    <form action="/map2" method="POST">
-        <label>Zip Code 2</label><br>
-        <input type="text" name="zipCode">
-        <input type="submit" value="Submit">
-    </form>
-    <form action="/map" method="POST">
-        <label>Zip Code 1</label><br>
-        <input type="text" name="zipCode">
-        <input type="submit" value="Submit">
-    </form>
+    <div class="row">
+        <div class="text-center">
+            <h1>Paycheck Protection Program Loan Distribution</h1>
+            <h2> Is the federal government helping keep you and your community whole through the pandemic?</h2>
+                <p class="text-center">
+                    If you want to jump to checking out loans in your community, click <a href="/view_map"><b>here</b></a> 
+                    for a searchable map with the highest-value loans mapped and search for any zipcode, city, state or address. 
+                </p>
+        </div>
+            
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="text-center">
+            <h4>
+                Following below, we'll walk through a series of plots looking at the distribution of loans disbursed as part of the PPP. 
+                Each image is also a link an interactable <a href="https://plotly.com">Plotly</a> plot.
+            </h4>
+        </div>
+    </div>
+
 
     <div class="text-center">
         <a href="/sum_by_state"><img src="static/loan_sum_by_state.png" alt="Total Value of Disbursed Loans by State"></a>
     </div>
+
+    <!-- <div class="row">
+        <div class="text-center">
+            <form action="/map2" method="POST">
+                <label>Zip Code 2</label><br>
+                <input type="text" name="zipCode">
+                <input type="submit" value="Submit">
+            </form>
+            <form action="/map" method="POST">
+                <label>Zip Code 1</label><br>
+                <input type="text" name="zipCode">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div> -->
 
 {% endblock %}
