@@ -47,5 +47,10 @@ def sum_by_state():
     return render_template('loan_sum_by_state.html')
 
 
+@app.route('/sum_per_cap')
+def sum_per_cap():
+    return render_template('loan_sum_per_cap.html')
+
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
