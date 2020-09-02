@@ -1,6 +1,5 @@
 venv
 *swp
 api_key.txt
-*.ipynb*
-data
 .vscode
+data/ppp_150.csv
