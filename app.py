@@ -52,6 +52,11 @@ def sum_per_cap():
     return render_template('loan_sum_per_cap.html')
 
 
+@app.route('/cost_per_job')
+def cost_per_job():
+    return render_template('cost_per_job_saved.html')
+
+
 @app.route('/ab_loans')
 def ab_map():
     return render_template("map_ab.html")
