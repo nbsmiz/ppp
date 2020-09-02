@@ -5,3 +5,4 @@ api_key.txt
 .ipynb_*
 data/ppp_150.csv
 data/ppp_loan_strip.json
+.ipynb_checkpoints/data_explore-checkpoint.ipynb
